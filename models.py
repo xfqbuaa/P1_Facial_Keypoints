@@ -32,6 +32,12 @@ class Net(nn.Module):
         self.fc1 = nn.Linear(16*53*53, 3000)
         self.fc2 = nn.Linear(3000, 1000)
         self.fc3 = nn.Linear(1000, 136)
+        
+        # xavier initialization 
+        for m in self.modules():
+            if isinstance(m, nn.Conv2d):
+                I.xavier_uniform(m.weight.data)
+                I.constant(m.bias.data,0.1)
 
         # NaimishNet
         #self.conv1 = nn.Conv2d(1, 32, 4)
