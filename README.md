@@ -12,7 +12,7 @@
 ![](./images/bat_key.png)
 * Adding a sunglasses
 
-	![](./images/bat_glass.png)
+![](./images/bat_glass.png)
 
 ## Review
 * The directly cropped images with `detectMultiScale` will lead to poor facial keypoints detection. In order to improve it, some padding factor will be considered as follow:
