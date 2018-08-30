@@ -36,8 +36,8 @@ class Net(nn.Module):
         # xavier initialization 
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
-                I.xavier_uniform(m.weight.data)
-                I.constant(m.bias.data,0.1)
+                I.xavier_uniform_(m.weight.data)
+                I.constant_(m.bias.data,0.1)
 
         # NaimishNet
         #self.conv1 = nn.Conv2d(1, 32, 4)
