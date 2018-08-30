@@ -14,7 +14,7 @@
 	![](./images/bat_glass.png)
 
 ## Review
-* The cropped images with `detectMultiScale` will lead to poor facial keypoints detection. In order to improve it, some padding factor will be considered as follow:
+* The directly cropped images with `detectMultiScale` will lead to poor facial keypoints detection. In order to improve it, some padding factor will be considered as follow:
 ```
 # padding
 y_padding = int(h*0.2)
@@ -26,7 +26,9 @@ int(x-x_padding):int(x+w+2*x_padding)]
 
 Now you have to fine tune padding factors for different images to get better detection performance.
 
-*  `detectMultiScale` parameters will influence facial detection. 
+This is because the cropped images from `detectMultiScale` scale different with the training data.  
+
+*  `detectMultiScale` parameters will influence facial detection and also need fine tune for different images.
 ***
 ## Project Overview
 
